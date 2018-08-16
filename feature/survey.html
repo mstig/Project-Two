@@ -30,24 +30,23 @@
     <h4>Name (Required)</h4>
     <input type="text" id="name" class="form-control" required>
 
-    <h4>Age (Must be 21 years of age to enter...)</h4>
+    <h4>Age (You must be 21 years of age to enter.)</h4>
     <input type="text" id="age" class="form-control" required>
 
     <hr>
 
     <h3><strong>Question 1</strong></h3>
-    <h4>What is the minimum percentage ABV that you will tolerate?</h4>
+    <h4>What is the prefered ABV of the beer you enjoy?</h4>
     <select class="chosen-select" id="q1">
       <option value=""></option>
-      <option value="1">4.0 ABV</option>
-      <option value="2">5.0 ABV</option>
-      <option value="3">6.0 ABV</option>
-      <option value="4">7.0 ABV</option>
-      <option value="5">8.0+ ABV (Strongly Agree)</option>
+      <option value="1">1. 4.0 - 5.0 ABV (LIGHT BEER/LAGER)</option>
+      <option value="2">2. 6.0 - 7.0 ABV (IPA/SAISON)</option>
+      <option value="3">3. 7.0 - 8.0 ABV (DOUBLE IPA/BROWN ALE)</option>
+      <option value="4">4. 9.0+ ABV (PORTER/STOUT)</option>
     </select>
 
     <h3><strong>Question 2</strong></h3>
-    <h4>Generally speaking, you enjoy hoppy bears like an Indian Pale Ale?</h4>
+    <h4>Generally speaking, you enjoy lights beers like an Pale Lager, Pilsener or Wheat Ale?</h4>
     <select class="chosen-select" id="q2">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -59,7 +58,7 @@
 
 
     <h3><strong>Question 3</strong></h3>
-    <h4>Gernerally speaking, you'd actyually prefer a darker beer, such as a Stout?.</h4>
+    <h4>Generally speaking, you enjoy light-to-medium beers like an Indian Pale Ale, American Pale Ale or Saison?</h4>
     <select class="chosen-select" id="q3">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -71,7 +70,7 @@
 
 
     <h3><strong>Question 4</strong></h3>
-    <h4>You rarely do something just out of sheer curiosity.</h4>
+   <h4>Generally speaking, you enjoy medium beers like an Double IPA, Amber Ale or Brown Ale?</h4>
     <select class="chosen-select" id="q4">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -83,7 +82,7 @@
 
 
     <h3><strong>Question 5</strong></h3>
-    <h4>People can rarely upset you.</h4>
+    <h4>Generally speaking, you'd actyually prefer a darker beer, such as a Stout or Porter?</h4>
     <select class="chosen-select" id="q5">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -95,53 +94,18 @@
 
 
     <h3><strong>Question 6</strong></h3>
-    <h4>It is often difficult for you to relate to other people’s feelings.</h4>
+    <h4>I was looking for a beer brewed in the last three years?</h4>
     <select class="chosen-select" id="q6">
       <option value=""></option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
+      <option value="1">1. YES</option>
+      <option value="2">2. I DON'T KNOW</option>
+      <option value="3">3. NO</option>
     </select>
 
 
     <h3><strong>Question 7</strong></h3>
-    <h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
+    <h4>How bitter do you like your beer?</h4>
     <select class="chosen-select" id="q7">
-      <option value=""></option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-
-    <h3><strong>Question 8</strong></h3>
-    <h4>You rarely get carried away by fantasies and ideas.</h4>
-    <select class="chosen-select" id="q8">
-      <option value=""></option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-
-    <h3><strong>Question 9</strong></h3>
-    <h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
-    <select class="chosen-select" id="q9">
-      <option value=""></option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-
-    <h3><strong>Question 10</strong></h3>
-    <h4>You feel more energetic after spending time with a group of people.</h4>
-    <select class="chosen-select" id="q10">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -247,8 +211,6 @@
             $("#q6").val(),
             $("#q7").val(),
             $("#q8").val(),
-            $("#q9").val(),
-            $("#q10").val()
           ]
         };
 

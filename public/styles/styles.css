@@ -10,4 +10,13 @@ body {
  
 h1, h2, h3, h4, h5, p {
   color: white;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+h2 {
+  font-family: 'Shadows Into Light', cursive;
+}
+
+#nav {
+  margin-top: 20%;
 }

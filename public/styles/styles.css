@@ -1,3 +1,13 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+body {
+  background: url('../assets/images/barbackground1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+ 
+h1, h2, h3, h4, h5, p {
+  color: white;
+}

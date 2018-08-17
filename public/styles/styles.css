@@ -8,7 +8,7 @@ body {
   background-size: cover;
 }
  
-h1, h2, h3, h4, h5, p {
+h1, h2, h3, h4, h5, h6, p {
   color: white;
   font-family: 'Shadows Into Light', cursive;
 }
@@ -17,15 +17,138 @@ h2 {
   font-family: 'Shadows Into Light', cursive;
 }
 
-#nav {
-  margin-top: 20%;
+#nav, .footerlink {
+  position: relative;
+  bottom: 0px;
 }
 
 .btn {
   margin: 3px;
 }
 
-.footerlink {
-  margin:5px;
-  color: white;
+
+#containerbeer {
+  width: 200px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 28%;
+}
+
+#containerbeer .beer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #fac92c;
+  bottom: 0;
+  height: 0;
+  transition: 1500ms ease-in;
+}
+#containerbeer .beer.fill {
+  height: 100%;
+}
+#containerbeer .beer:after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: #ea9602;
+  right: 0;
+}
+#containerbeer .glass {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: solid 10px #e8e4d9;
+  border-top: solid 5px #e8e4d9;
+  border-bottom: solid 30px #e8e4d9;
+  border-radius: 5px;
+  transform: perspective(500px) rotateX(-30deg);
+}
+#containerbeer .glass:before,
+#containerbeer .glass:after {
+  content: '';
+  position: absolute;
+  border-radius: 10px;
+  background: #fff;
+  width: 10px;
+}
+#containerbeer .glass:before {
+  height: 20%;
+  left: 10px;
+  top: 5%;
+  z-index: 1;
+}
+#containerbeer .glass:after {
+  height: 70%;
+  right: 10px;
+  top: 5%;
+}
+#containerbeer .head {
+  position: absolute;
+  width: 60%;
+  height: 60px;
+  background: #fff;
+  bottom: 10%;
+  left: 5px;
+  border-radius: 50%;
+  z-index: 0;
+  transition: 1600ms ease-in;
+}
+#containerbeer .head.active {
+  bottom: 82%;
+}
+#containerbeer .head:before,
+#containerbeer .head:after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+}
+#containerbeer .head:before {
+  width: 30px;
+  height: 30px;
+  left: 50px;
+  top: 15px;
+}
+#containerbeer .head:after {
+  width: 40px;
+  height: 40px;
+  left: 67px;
+  top: 9px;
+}
+#containerbeer .pour {
+  position: absolute;
+  width: 40px;
+  height: 250%;
+  background: #fac92c;
+  border-radius: 20px;
+  left: 25px;
+  z-index: -1;
+  bottom: 300%;
+  transition: 300ms ease-in;
+}
+#containerbeer .pour.pouring {
+  bottom: 23%;
+}
+#containerbeer .pour.end {
+  height: 0;
+}
+
+#idcard {
+  width: 200px;
+  height: 300px;
+  position: absolute;
+  left: 600px;
+  top: 500px;
+  background: white;
+}
+
+#datacard {
+  width: 200px;
+  height: 300px;
+  position: absolute;
+  left: 237%;
+  top: -430px;
+  background: white;
 }

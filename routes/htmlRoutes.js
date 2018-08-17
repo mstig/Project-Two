@@ -24,6 +24,10 @@ module.exports = function(app) {
     res.render("privacypolicy");
 });
 
+app.get("/glass", function(req, res) {
+  res.render("glass");
+});
+
 app.get("/termsofuse", function(req, res) {
   res.render("termsofuse");
 });

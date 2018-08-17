@@ -1,0 +1,54 @@
+<style>
+    p{color:black;}
+    h5{color:black;}
+    h6{color:black;}
+    p{color:black;}
+</style>
+<div class='col-3'>
+<div class="card" id='idcard'>
+  <div class="card-body">
+    <h5 class="card-title">Yeungling Lager</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Penn's Choice</h6>
+    <p class="card-text">Brewed in Pennsylvania and tastes like mistakes.</p>
+    <a href="/" class="card-link">Go Back</a>
+  </div>
+</div>
+</div>
+<div class='col-6' id="containerbeer">
+  <div class="glass">
+    <div class="beer"></div>
+  </div>
+  {{!-- <div class="head"></div> --}}
+  <div class="pour"></div>
+</div>
+<div class='col-3'>
+<div class="card" id='datacard'>
+  <div class="card-body">
+    <h5 class="card-title">Information:</h5>
+    <p class="card-text">4.4 percent ABV.</p>
+    <p class="card-text">Brewed in Pennsylvania</p>
+    <p class="card-text">Available Worldwide</p>
+    <p class="card-text">Recommended.</p>
+
+  </div>
+</div>
+</div>
+
+<script>
+    $(function() {
+  function beerRise() {
+    $('.beer').addClass('fill');
+    $('.head').addClass('active');
+  }
+  function pourBeer() {
+    $('.pour').addClass('pouring');
+    beerRise();
+    setTimeout(function() {
+      $('.pour').addClass('end');
+    }, 1500);
+  }
+  setTimeout(function() {
+    pourBeer();
+  }, 300);
+});
+</script>

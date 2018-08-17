@@ -1,7 +1,7 @@
-{
+module.exports  ={
   "development": {
     "username": "root",
-    "password": "*********",
+    "password": process.env.DB_Pass,
     "database": "exampledb",
     "host": "localhost",
     "dialect": "mysql"

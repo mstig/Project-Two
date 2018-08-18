@@ -6,6 +6,7 @@ body {
   background: url('../assets/images/barbackground1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: black;
 }
  
 h1, h2, h3, h4, h5, h6, p {
@@ -15,6 +16,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 h2 {
   font-family: 'Shadows Into Light', cursive;
+}
+
+#matches {
+  height: 400px;
 }
 
 #nav, .footerlink {

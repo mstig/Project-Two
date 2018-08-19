@@ -2,6 +2,8 @@ require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
+var https = require("https");
+var fs = require('fs');
 
 var db = require("./models");
 
@@ -36,7 +38,13 @@ if (process.env.NODE_ENV === "test") {
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
-  app.listen(PORT, function() {
+  var options = {
+      cert: fs.readFileSync ('/Users/carlyschwichtenberg/localhost-ssl/cert.pem'),
+      key: fs.readFileSync ('/Users/carlyschwichtenberg/localhost-ssl/key.pem'),
+      requestCert: false,
+      rejectUnauthorized: false
+  };
+  https.createServer(options, app).listen(PORT, function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,

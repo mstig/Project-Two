@@ -17,8 +17,8 @@ module.exports = function(app) {
   });
 
   app.get("/login", function(req, res) {
-    res.sendFile(path.join(__dirname, "views/login.html"));
-});
+    res.sendFile('/Users/carlyschwichtenberg/Desktop/workingRepos/URCode/Project-Two-FBAuthTEST-local/views/login.html');
+    });
 
   app.get("/privacypolicy", function(req, res) {
     res.render("privacypolicy");

@@ -10,7 +10,7 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  background: #fac92c;
+  background: #fed849;
   bottom: 0;
   height: 0;
   transition: 1500ms ease-in;
@@ -104,7 +104,7 @@
   position: absolute;
   width: 40px;
   height: 250%;
-  background: #fac92c;
+  background: #fed849;
   border-radius: 20px;
   left: 25px;
   z-index: -1;
@@ -124,8 +124,9 @@
   width: 200px;
   height: 300px;
   position: absolute;
-  left: 600px;
-  top: 500px;
+  left: 100%;
+  /* left: 480px; */
+  top: 430px;
   background: white;
 }
 
@@ -133,7 +134,7 @@
   width: 200px;
   height: 300px;
   position: absolute;
-  left: 237%;
+  left: 260%;
   top: -430px;
   background: white;
 }

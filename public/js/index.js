@@ -1,13 +1,15 @@
 
 
 $("#submit").on("click", function () {
-  console.log("submit button click");
   var beerSearch = $("#example-text").val().trim();
-  console.log("search term:" + beerSearch);
 
   var queryURL = "https://api.punkapi.com/v2/beers?beer_name=" + beerSearch;
   $.ajax({ url: queryURL, method: "GET" }).then(function (response) {
     console.log(response);
+    app.get("/glass", function (req, res) {
+      console.log("inside app get log");
+      res.render("glass");
+    });
   });
 });
 

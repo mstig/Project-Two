@@ -1,55 +1,67 @@
 <style>
-    p{color:black;}
-    h5{color:black;}
-    h6{color:black;}
-    p{color:black;}
+  p {
+    color: black;
+  }
+
+  h5 {
+    color: black;
+  }
+
+  h6 {
+    color: black;
+  }
+
+  p {
+    color: black;
+  }
 </style>
 
 <div class='col-12'>
-<div class='col-md-3 col-sm-12'>
-<div class="card" id='idcard'>
-  <div class="card-body">
-    <h5 class="card-title" id='beername'>Yeungling Lager</h5>
-    <h6 class="card-subtitle mb-2 text-muted" id='beersubtitle'>Penn's Choice</h6>
-    <p class="card-text" id='beertext'>Brewed in Pennsylvania and tastes like mistakes.</p>
-    <a href="/" class="card-link">Go Back</a>
+  <div class='col-md-3 col-sm-12'>
+    <div class="card" id='idcard'>
+      <div class="card-body">
+        <h5 class="card-title" id='beername'>Yeungling Lager</h5>
+        <h6 class="card-subtitle mb-2 text-muted" id='beersubtitle'>Penn's Choice</h6>
+        <p class="card-text" id='beertext'>Brewed in Pennsylvania and tastes like mistakes.</p>
+        <a href="/" class="card-link">Go Back</a>
+      </div>
+    </div>
   </div>
-</div>
-</div>
-<div class='col-md-6 col-sm-12' id="containerbeer">
-  <div class="glass">
-    <div class="beer"></div>
+  <div class='col-md-6 col-sm-12' id="containerbeer">
+    <div class="glass">
+      <div class="beer"></div>
+    </div>
+    {{!--
+    <div class="head"></div> --}}
+    <div class="pour"></div>
   </div>
-  {{!-- <div class="head"></div> --}}
-  <div class="pour"></div>
-</div>
-<div class='col-md-3 col-sm-12'>
-<div class="card" id='datacard'>
-  <div class="card-body">
-    <h5 class="card-title">Information:</h5>
-    <p class="card-text" id='beerabv'>4.4 percent ABV.</p>
-    <p class="card-text" id='beerorigin'>Brewed in Pennsylvania</p>
-    <p class="card-text" id='beeravailability'>Available Worldwide</p>
-    <p class="card-text" id='beerscore'>Recommended.</p>
+  <div class='col-md-3 col-sm-12'>
+    <div class="card" id='datacard'>
+      <div class="card-body">
+        <h5 class="card-title">Information:</h5>
+        <p class="card-text" id='beerabv'>4.4 percent ABV.</p>
+        <p class="card-text" id='beerorigin'>Brewed in Pennsylvania</p>
+        <p class="card-text" id='beeravailability'>Available Worldwide</p>
+        <p class="card-text" id='beerscore'>Recommended.</p>
+      </div>
+    </div>
   </div>
-</div>
-</div>
 </div>
 <script>
-    $(function() {
-  function beerRise() {
-    $('.beer').addClass('fill');
-    $('.head').addClass('active');
-  }
-  function pourBeer() {
-    $('.pour').addClass('pouring');
-    beerRise();
-    setTimeout(function() {
-      $('.pour').addClass('end');
-    }, 1500);
-  }
-  setTimeout(function() {
-    pourBeer();
-  }, 300);
-});
+  $(function () {
+    function beerRise() {
+      $('.beer').addClass('fill');
+      $('.head').addClass('active');
+    }
+    function pourBeer() {
+      $('.pour').addClass('pouring');
+      beerRise();
+      setTimeout(function () {
+        $('.pour').addClass('end');
+      }, 1500);
+    }
+    setTimeout(function () {
+      pourBeer();
+    }, 300);
+  });
 </script>

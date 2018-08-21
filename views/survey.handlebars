@@ -113,8 +113,10 @@
 
       //gonna figure out a way to combine all values of the color questions to plug in ebc_gt and ebc_lt params
 
-      var queryURL = `https://api.punkapi.com/v2/beers?abv_gt=${abv - 1}&abv_lt=${abv + 1}&ibu_gt=${ibu - 10}&ibu_lt=${ib + 10}&brewed_after=${newBeers}`;
-      $.ajax({})
+      var queryURL = `https://api.punkapi.com/v2/beers?abv_gt=${abv - 1}&abv_lt=${abv + 1}&ibu_gt=${ibu - 10}&ibu_lt=${ibu + 10}&brewed_after=${newBeers}`;
+      $.ajax({ url: queryURL, method: "GET" }).then(function (response) {
+        console.log(response);
+      });
     });
 
   </script>

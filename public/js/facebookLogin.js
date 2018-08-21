@@ -1,4 +1,5 @@
-  // This is called with the results from from FB.getLoginStatus().
+ 
+ // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);

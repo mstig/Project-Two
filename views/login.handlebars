@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Facebook Login JavaScript Example</title>
-<meta charset="UTF-8">
-</head>
+
 <body>
 <script>
   // This is called with the results from from FB.getLoginStatus().
@@ -86,12 +81,22 @@
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
 -->
+<div class="jumbotron text-center" id="login-panel">
+  <h1 class="display-4">Welcome To Brews For Me!</h1>
+  <p class="lead">Let us find your next favorite Beer.</p>
+  <hr class="my-4">
+  <p>Login to Facebook to save your favorite Brews!</p>
+  
+  <p class="lead">
+    <fb:login-button scope="public_profile,email" class="fb-login-button" onlogin="checkLoginState();" data-width="100px" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true">
+      </fb:login-button>
+<div id="status">
+</div>
+  </p>
+</div>
 
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
 
 <div id="status">
 </div>
 
 </body>
-</html>

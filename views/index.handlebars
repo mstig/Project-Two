@@ -14,9 +14,18 @@
 
           <a id='random' class='btn btn-light float-right'href='glass'>Roll the Dice</a>
           <a id="submit" class="btn btn-light float-right">Search</a>
+        
           
         </form>
+              <fb:login-button scope="public_profile,email" class="fb-login-button" onlogin="checkLoginState();" data-width="100px" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true">
+      </fb:login-button>
+
+      <div id="status">
+</div>
+
         <div id='matches'>
+     
+        
         <h3>Matches:</h3>
         <ul id="example-list" class="list-group">
           {{#each examples}}

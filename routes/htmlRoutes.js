@@ -1,5 +1,6 @@
 var db = require("../models");
 var path = require("path");
+const request = require("request");
 
 module.exports = function (app) {
   // Load index page
@@ -24,9 +25,14 @@ module.exports = function (app) {
     res.render("privacypolicy");
   });
 
-  app.get("/glass", function (req, res) {
-    console.log(req.body);
-    res.render("glass");
+  app.get("/glass/:search", function (req, res) {
+    var beerSearch = req.params.search;
+    var queryURL = "https://api.punkapi.com/v2/beers?beer_name=" + beerSearch;
+
+    request(queryURL, function (err, response, body) {
+      var beerInfo = JSON.parse(response.body);
+      res.render("glass", { beer: beerInfo[0] });
+    });
   });
 
   app.get("/termsofuse", function (req, res) {

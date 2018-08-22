@@ -1,18 +1,10 @@
 
 
+
 $("#submit").on("click", function () {
   var beerSearch = $("#example-text").val().trim();
-
-  var queryURL = "https://api.punkapi.com/v2/beers?beer_name=" + beerSearch;
-  $.ajax({ url: queryURL, method: "GET" }).then(function (response) {
-    console.log(response);
-    app.get("/glass", function (req, res) {
-      console.log("inside app get log");
-      res.render("glass");
-    });
-  });
+  window.location.href = "/glass/" + beerSearch;
 });
-
 
 /***************************************
 Random button click, doesnt need user input, can attach it to the page load on redirect

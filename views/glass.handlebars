@@ -16,13 +16,21 @@
   }
 </style>
 
+<h1>{{beer.name}} beer.name</h1>
+<h1>{{beer.tagline}}</h1>
+<h1>{{beer.description}}</h1>
+
+
+
+
 <div class='col-12'>
   <div class='col-md-3 col-sm-12'>
     <div class="card" id='idcard'>
       <div class="card-body">
-        <h5 class="card-title" id='beername'>Yeungling Lager</h5>
-        <h6 class="card-subtitle mb-2 text-muted" id='beersubtitle'>Penn's Choice</h6>
-        <p class="card-text" id='beertext'>Brewed in Pennsylvania and tastes like mistakes.</p>
+
+        <h5 class="card-title" id='beername'>{{beer.name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted" id='beersubtitle'>{{beer.tagline}}</h6>
+        <p class="card-text" id='beertext'>{{beer.description}}</p>
         <a href="/" class="card-link">Go Back</a>
       </div>
     </div>
@@ -39,7 +47,7 @@
     <div class="card" id='datacard'>
       <div class="card-body">
         <h5 class="card-title">Information:</h5>
-        <p class="card-text" id='beerabv'>4.4 percent ABV.</p>
+        <p class="card-text" id='beerabv'>{{beer.abv}} percent ABV.</p>
         <p class="card-text" id='beerorigin'>Brewed in Pennsylvania</p>
         <p class="card-text" id='beeravailability'>Available Worldwide</p>
         <p class="card-text" id='beerscore'>Recommended.</p>
@@ -47,7 +55,11 @@
     </div>
   </div>
 </div>
+
 <script>
+
+
+
   $(function () {
     function beerRise() {
       $('.beer').addClass('fill');
@@ -64,4 +76,38 @@
       pourBeer();
     }, 300);
   });
+
+
+  var response = [{
+    "id": 100,
+    "name": "Elvis Juice V2.0 - Prototype Challenge",
+    "tagline": "Citrus Infused IPA.",
+    "first_brewed": "12/2015",
+    "description": "Punchy resinous hoppy aromas blast from the glass; light floral and citrus notes riff against huge piney character. Showcasing Citra, Simcoe and Amarillo at their absolute best. A huge dose of grapefruit peel brings swirls of fresh pithy zest, accentuating the dry hops and building on the dry, biscuit malt base.",
+    "image_url": "https://images.punkapi.com/v2/100.png",
+    "abv": 6.5,
+    "ibu": 60,
+    "target_fg": 1010,
+    "target_og": 1060,
+    "ebc": 25,
+    "srm": 12.5,
+    "ph": 4.4,
+    "attenuation_level": 83.3,
+    "volume": { "value": 20, "unit": "liters" },
+    "boil_volume": { "value": 25, "unit": "liters" },
+    "method": {
+      "mash_temp": [{ "temp": { "value": 65, "unit": "celsius" }, "duration": 75 }],
+      "fermentation": { "temp": { "value": 19, "unit": "celsius" } },
+      "twist": "Add grapefruit and orange peel into the boil and FV for extra citrus twist"
+    },
+    "ingredients": {
+      "malt": [{ "name": "Extra Pale", "amount": { "value": 4.5, "unit": "kilograms" } },
+      { "name": "Caramalt", "amount": { "value": 0.88, "unit": "kilograms" } }], "hops": [{ "name": "Magnum", "amount": { "value": 2.5, "unit": "grams" }, "add": "start", "attribute": "bitter" }, { "name": "Simcoe", "amount": { "value": 12.5, "unit": "grams" }, "add": "middle", "attribute": "flavour" }, { "name": "Amarillo", "amount": { "value": 12.5, "unit": "grams" }, "add": "middle", "attribute": "flavour" }, { "name": "Mosaic", "amount": { "value": 25, "unit": "grams" }, "add": "end", "attribute": "flavour" }, { "name": "Citra", "amount": { "value": 25, "unit": "grams" }, "add": "end", "attribute": "flavour" }, { "name": "Amarillo", "amount": { "value": 12.5, "unit": "grams" }, "add": "end", "attribute": "flavour" }, { "name": "Simcoe", "amount": { "value": 12.5, "unit": "grams" }, "add": "end", "attribute": "flavour" }, { "name": "Citra", "amount": { "value": 50, "unit": "grams" }, "add": "dry hop", "attribute": "aroma" }, { "name": "Amarillo", "amount": { "value": 50, "unit": "grams" }, "add": "dry hop", "attribute": "aroma" }, { "name": "Simcoe", "amount": { "value": 50, "unit": "grams" }, "add": "dry hop", "attribute": "aroma" }], "yeast": "Wyeast 1056 - American Ale™"
+    },
+    "food_pairing": ["Mexican ceviche", "Coriander and lime green thai curry", "Grapefruit souffle"],
+    "brewers_tips": "Shave of the surface of the citrus peel to unlock the highly aromatic compounds into the beer. Avoid putting any white pith into the brew as it will create an intense and unpleasant bitterness.", "contributed_by": "Sam Mason <samjbmason>"
+  }];
+
+  console.log(response[0]);
+
 </script>

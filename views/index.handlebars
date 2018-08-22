@@ -12,20 +12,20 @@
             <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Name Your Brew">
           </div>
 
-          <a id='random' class='btn btn-light float-right'href='glass'>Roll the Dice</a>
+          <a id='random' class='btn btn-light float-right' href='glass'>Roll the Dice</a>
           <a id="submit" class="btn btn-light float-right">Search</a>
-          
+
         </form>
         <div id='matches'>
-        <h3>Matches:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
+          <h3>Matches:</h3>
+          <ul id="example-list" class="list-group">
+            {{#each examples}}
+            <li data-id="{{this.id}}" class="list-group-item">
+              <a href="example/{{this.id}}">{{this.text}}</a>
+              <button class="btn btn-danger float-right delete">ｘ</button>
+            </li>
+            {{/each}}
+          </ul>
         </div>
       </div>
     </div>

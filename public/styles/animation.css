@@ -1,10 +1,4 @@
-#containerbeer {
-  /* width: 200px;
-  height: 400px;
-  margin: 0 auto;
-  position: relative;
-  margin-top: 28%; */
-}
+
 #containerbeer .beer {
   width: 100%;
   height: 100%;
@@ -12,23 +6,13 @@
   bottom: -50%;
   background: #fed849;
   background: linear-gradient(white, #b98904,#b98904,#b98904, #b98904,#b98904);
-  transition: all 3s ease-in-out;
+  transition: all 2.5s ease-in-out;
   transform: scaleY(0);
-  /* transition: 1500ms ease-in; */
 }
 #containerbeer .beer.fill {
   transform: scaleY(1);
   bottom: 0%;
 }
-/* #containerbeer .beer:after {
-  content: '';
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  background: #ea9602;
-  right: 0;
-} */
-
 #containerbeer .glass {
   position: relative;
   display: block;
@@ -41,6 +25,24 @@
   transform: perspective(500px) rotateX(-30deg);
   margin:auto;
 }
+
+#containerbeer .tap {
+  position: relative;
+  display: block;
+  width: 100px;
+  height: 120px;
+  background: black;
+  border: solid 10px #e8e4d9;
+  border-top: solid 5px #e8e4d9;
+  border-bottom: solid 30px #e8e4d9;
+  border-radius: 5px;
+  transform: perspective(400px) rotateX(-30deg);
+  margin:auto;
+  top: -65%;
+  right: 2.5%;
+  z-index: 1;
+}
+
 #containerbeer .glass:before,
 #containerbeer .glass:after {
   content: '';
@@ -61,49 +63,26 @@
   top: 5%;
 }
 
-
 #containerbeer .pour {
-  /* position: relative; */
   width: 40px;
-  height: 250%;
+  height: 400%;
   border-radius: 20px;
-  right: 2px;
-  /* z-index: -1; */
-  /* bottom: 300%; */
- transition: 300ms ease-in;
+  right: 50%;
+  transition: 200ms ease-in;
+  background: linear-gradient( #b98904,#b98904, white);
+  z-index: -1;
 }
 
 #containerbeer .pour.pouring {
-  bottom: 23%;
-  position: fixed;
+  bottom: 16%;
+  position: absolute;
 }
-
-/*#containerbeer .beer.fill:after{
-  /* content: '';
-   position: absolute;
-   bottom: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   transform: scaleY(0);
-   transform-origin: bottom center;
-   background: #fed849;
-   z-index: -1;
-   transition: transform 0.3s; */
-/*}
-
-/* #containerbeer .beer:hover::after{
-  transform: scaleY(1);
-} */
-
 #containerbeer .pour.end {
   height: 0;
 }
-
 .animationwrapper {
   padding-top: 25%;
 }
-
 .animationwrapper .card {
   height: 300px;
   text-align: center;

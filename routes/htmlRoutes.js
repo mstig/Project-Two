@@ -17,17 +17,21 @@ module.exports = function (app) {
     res.render("survey");
   });
 
-  app.get("/login", function(req, res) {
+  app.get("/login", function (req, res) {
     res.render("login");
-});
+  });
 
   app.get("/privacypolicy", function (req, res) {
     res.render("privacypolicy");
   });
 
-  app.get("/glass/:search", function (req, res) {
+  app.get("/glass/:search?", function (req, res) {
     var beerSearch = req.params.search;
     var queryURL = "https://api.punkapi.com/v2/beers?beer_name=" + beerSearch;
+
+    if (!beerSearch) {
+      queryURL = "https://api.punkapi.com/v2/beers/random";
+    }
 
     request(queryURL, function (err, response, body) {
       var beerInfo = JSON.parse(response.body);

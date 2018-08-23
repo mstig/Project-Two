@@ -20,11 +20,16 @@ body, html {
     position: absolute;
     box-shadow: 0px 5px 13px 0px rgba(170, 119, 56, 0.6) inset;
     border-radius: 50%;
-    background: -webkit-radial-gradient(center ellipse, rgba(255,255,255,0.3) 0%,rgba(255,255,255,0) 64%);
-    background: -o-radial-gradient(center ellipse, rgba(255,255,255,0.3) 0%,rgba(255,255,255,0) 64%);
-    background: radial-gradient(ellipse at center, rgba(255,255,255,0.3) 0%,rgba(255,255,255,0) 64%);
+    background-image: url("https://metatags.nl/seo/wp-content/uploads/2015/07/404_not_found.gif");
+    opacity: 0.85;
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;  
     border-radius: 50%;
   z-index: 2;
   width: 50px;
   height: 50px;
+  
+ 
+
 }

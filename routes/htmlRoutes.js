@@ -17,15 +17,9 @@ module.exports = function (app) {
     res.render("survey");
   });
 
-<<<<<<< HEAD
-  app.get("/login", function (req, res) {
-    res.sendFile(path.join(__dirname, "views/login.html"));
-  });
-=======
   app.get("/login", function(req, res) {
     res.render("login");
 });
->>>>>>> master
 
   app.get("/privacypolicy", function (req, res) {
     res.render("privacypolicy");

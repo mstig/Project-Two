@@ -16,6 +16,7 @@
   }
 </style>
 
+<<<<<<< HEAD
 <h1>{{beer.name}} beer.name</h1>
 <h1>{{beer.tagline}}</h1>
 <h1>{{beer.description}}</h1>
@@ -51,10 +52,40 @@
         <p class="card-text" id='beerorigin'>Brewed in Pennsylvania</p>
         <p class="card-text" id='beeravailability'>Available Worldwide</p>
         <p class="card-text" id='beerscore'>Recommended.</p>
+=======
+<div class='container-fluid'>
+  <div class='row animationwrapper'>
+    <div class='col-md-3 col-sm-12'>
+      <div class="card" id='idcard'>
+        <div class="card-body">
+          <h5 class="card-title" id='beername'>Yeungling Lager</h5>
+          <h6 class="card-subtitle mb-2 text-muted" id='beersubtitle'>Penn's Choice</h6>
+          <p class="card-text" id='beertext'>Brewed in Pennsylvania and tastes like mistakes.</p>
+          <a href="/" class="card-link">Go Back</a>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-6 col-sm-12' id="containerbeer">
+      <div class="glass">
+        <div class="beer"></div>
+      </div>
+      <div class="pour"></div>
+    </div>
+    <div class='col-md-3 col-sm-12'>
+      <div class="card" id='datacard'>
+        <div class="card-body">
+          <h5 class="card-title">Information:</h5>
+          <p class="card-text" id='beerabv'>4.4 percent ABV.</p>
+          <p class="card-text" id='beerorigin'>Brewed in Pennsylvania</p>
+          <p class="card-text" id='beeravailability'>Available Worldwide</p>
+          <p class="card-text" id='beerscore'>Recommended.</p>
+        </div>
+>>>>>>> master
       </div>
     </div>
   </div>
 </div>
+<<<<<<< HEAD
 
 <script>
 
@@ -64,6 +95,12 @@
     function beerRise() {
       $('.beer').addClass('fill');
       $('.head').addClass('active');
+=======
+<script>
+  $(function () {
+    function beerRise() {
+      $('.beer').addClass('fill');
+>>>>>>> master
     }
     function pourBeer() {
       $('.pour').addClass('pouring');
@@ -76,6 +113,7 @@
       pourBeer();
     }, 300);
   });
+<<<<<<< HEAD
 
 
   var response = [{
@@ -110,4 +148,6 @@
 
   console.log(response[0]);
 
+=======
+>>>>>>> master
 </script>

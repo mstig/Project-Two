@@ -4,13 +4,11 @@ var path = require("path");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
+        res.render("index", {
+        msg: "Welcome!"
       });
     });
-  });
+
 
   app.get("/survey", function(req, res) {
       res.render("survey");
@@ -30,6 +28,10 @@ app.get("/glass", function(req, res) {
 
 app.get("/termsofuse", function(req, res) {
   res.render("termsofuse");
+});
+
+app.get("/favs", function(req, res) {
+  res.render("favs");
 });
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {

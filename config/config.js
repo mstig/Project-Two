@@ -2,7 +2,7 @@ module.exports  ={
   "development": {
     "username": "root",
     "password": process.env.DB_Pass,
-    "database": "exampledb",
+    "database": "FavBrewDB",
     "host": "localhost",
     "dialect": "mysql"
   },

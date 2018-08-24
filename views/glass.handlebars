@@ -23,7 +23,9 @@
 
         <h5 class="card-title" id='beername'>{{beer.name}}</h5>
         <h6 class="card-subtitle mb-2 text-muted" id='beersubtitle'>{{beer.tagline}}</h6>
-        <p class="card-text" id='beertext'>{{beer.description}}</p>
+        <p class="card-text" id='beerabv'>{{beer.abv}} percent ABV.</p>
+        <p class="card-text" id='beeribu'>{{beer.ibu}} IBUs</p>
+        <p class="card-text" id='beerorigin'>First Brewed {{beer.first_brewed}}</p>
         <a href="/" class="card-link">Go Back</a>
       </div>
     </div>
@@ -40,10 +42,7 @@
     <div class="card" id='datacard'>
       <div class="card-body">
         <h5 class="card-title">Information:</h5>
-        <p class="card-text" id='beerabv'>{{beer.abv}} percent ABV.</p>
-        <p class="card-text" id='beerorigin'>Brewed in Pennsylvania</p>
-        <p class="card-text" id='beeravailability'>Available Worldwide</p>
-        <p class="card-text" id='beerscore'>Recommended.</p>
+        <p class="card-text" id='beertext'>{{beer.description}}</p>
       </div>
     </div>
   </div>

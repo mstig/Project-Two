@@ -14,6 +14,18 @@
   p {
     color: black;
   }
+  .bubble {
+    position: absolute;
+    box-shadow: 0px 5px 13px 0px rgba(170, 119, 56, 0.6) inset;
+    border-radius: 50%;
+    background: -webkit-radial-gradient(center ellipse, rgba(255,255,255,0.3) 0%,rgba(255,255,255,0) 64%);
+    background: -o-radial-gradient(center ellipse, rgba(255,255,255,0.3) 0%,rgba(255,255,255,0) 64%);
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.3) 0%,rgba(255,255,255,0) 64%);
+    border-radius: 50%;
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+}
 </style>
 
 <div class='container-fluid'>
@@ -31,7 +43,7 @@
     <div class='col-md-6 col-sm-12' id="containerbeer">
       <div class="tap"></div>
       <div class="glass">
-        <div class="beer"></div>
+        <div class="beer"id='beerbody'></div>
       </div>
       <div class="pour"></div>
     </div>
@@ -50,11 +62,61 @@
 </div>
 <script>
   $(function () {
+    function bubbles() {
+      var mainTl = new TimelineMax({ paused:false});
+
+        var parentHeight = $('.beer').height();
+        var parentWidth = $('.beer').width();
+
+        $('.beer').append(new Array(50).join('<div class="bubble" />'));
+
+        $(".bubble").each(function (i, bubble) {
+            animateBubble(bubble);
+        });
+        function animateBubble(bubble) {
+            var bubble = $(bubble);
+            var bubbleHeight = bubble.height();
+            var tl = new TimelineMax();
+            tl
+                .set(bubble, { y: function (index) { return (index + parentHeight * 1) }, scale: random(0.1, 0.3), x: random(1, 250), rotation: random(0, 360) })
+                .to(bubble, 1, { x: "+=10", yoyo: true, repeat: 2, ease: Sine.easeInOut }, random(0, 30))
+                .to(bubble, random(2, 30), { rotation: '+=360', y: String(-bubbleHeight), onComplete: animateBubble, onCompleteParams: [bubble] }, 0);
+            return tl;
+        }
+        function random(min, max) {
+            if (max == null) { max = min; min = 0; }
+            return Math.random() * (max - min) + min;
+        }
+    }
+    function beerColor() {
+    var EBC = 24;
+      if (EBC <= 11) {
+        $('.beer').css("background", "linear-gradient(white, #b87b1c,#b87b1c,#b87b1c, #b87b1c,#b87b1c)");
+        $('.pour').css("background", "linear-gradient(#b87b1c, #b87b1c,white)");
+      }
+      else if ((EBC > 11) && (EBC <= 19)) {
+        $('.beer').css("background", "linear-gradient(white, #bf8815, #bf8815, #bf8815, #bf8815,#bf8815)");
+        $('.pour').css("background", "linear-gradient(#bf8815, #bf8815, white)");
+      }
+      else if ((EBC >= 20) && (EBC <= 28)) {
+        $('.beer').css("background", "linear-gradient(white, #701e18,#701e18,#701e18, #701e18,#701e18)");
+        $('.pour').css("background", "linear-gradient(#701e18, #701e18,white)");
+      }
+      else if ((EBC > 28) && (EBC <=36)) {
+        $('.beer').css("background", "linear-gradient(white, #4b0c11, #4b0c11, #4b0c11, #4b0c11, #4b0c11)");
+        $('.pour').css("background", "linear-gradient(#4b0c11, #4b0c11, white)");
+      }
+      else if (EBC > 36){
+        $('.beer').css("background", "linear-gradient(white, #360c11, #360c11, #360c11, #360c11, #360c11)");
+        $('.pour').css("background", "linear-gradient(#360c11, #360c11, white)");
+    };
+    };
     function beerRise() {
       $('.beer').addClass('fill');
     }
     function pourBeer() {
       $('.pour').addClass('pouring');
+      beerColor();
       beerRise();
       setTimeout(function () {
         $('.pour').addClass('end');
@@ -62,6 +124,9 @@
     }
     setTimeout(function () {
       pourBeer();
+      bubbles();
     }, 300);
   });
+
+
 </script>

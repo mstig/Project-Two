@@ -4,14 +4,28 @@
     <div class="col-8 offset-2">
       <div class="card mt-4">
         <div class="card-body">
-          <h5 class="card-title">My Favorites</h5>
-          <p>
-            <strong>ID</strong>: {{example.id}}</p>
-          <p>
-          <p>
-            <strong>Text</strong>: {{example.text}}</p>
-          <p>
-            <strong>Description:</strong> {{example.description}}</p>
+<table class="table table-hover" >
+  <thead>
+    <tr>
+      <th>My Favorites</th>
+    </tr>
+    <tr>
+      <th scope="col">Beer ID</th>
+      <th scope="col">Name </th>
+      <th scope="col">Style</th>
+
+    </tr>
+  </thead>
+  <tbody id = "favTable">
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>more info</td>
+      <td>remove</td>
+    </tr>
+  </tbody>
+</table>
 
         </div>
       </div>

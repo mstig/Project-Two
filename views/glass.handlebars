@@ -31,7 +31,7 @@
     <div class='col-md-6 col-sm-12' id="containerbeer">
       <div class="tap"></div>
       <div class="glass">
-        <div class="beer"></div>
+        <div class="beer"id='beerbody'></div>
       </div>
       <div class="pour"></div>
     </div>
@@ -50,11 +50,35 @@
 </div>
 <script>
   $(function () {
+    function beerColor() {
+    var EBC = 5;
+      if (EBC <= 11) {
+        $('.beer').css("background", "linear-gradient(white, #b87b1c,#b87b1c,#b87b1c, #b87b1c,#b87b1c)");
+        $('.pour').css("background", "linear-gradient(#b87b1c, #b87b1c,white)");
+      }
+      else if ((EBC > 11) && (EBC <= 19)) {
+        $('.beer').css("background", "linear-gradient(white, #bf8815, #bf8815, #bf8815, #bf8815,#bf8815)");
+        $('.pour').css("background", "linear-gradient(#bf8815, #bf8815, white)");
+      }
+      else if ((EBC >= 20) && (EBC <= 28)) {
+        $('.beer').css("background", "linear-gradient(white, #701e18,#701e18,#701e18, #701e18,#701e18)");
+        $('.pour').css("background", "linear-gradient(#701e18, #701e18,white)");
+      }
+      else if ((EBC > 28) && (EBC <=36)) {
+        $('.beer').css("background", "linear-gradient(white, #4b0c11, #4b0c11, #4b0c11, #4b0c11, #4b0c11)");
+        $('.pour').css("background", "linear-gradient(#4b0c11, #4b0c11, white)");
+      }
+      else if (EBC > 36){
+        $('.beer').css("background", "linear-gradient(white, #360c11, #360c11, #360c11, #360c11, #360c11)");
+        $('.pour').css("background", "linear-gradient(#360c11, #360c11, white)");
+    };
+    };
     function beerRise() {
       $('.beer').addClass('fill');
     }
     function pourBeer() {
       $('.pour').addClass('pouring');
+      beerColor();
       beerRise();
       setTimeout(function () {
         $('.pour').addClass('end');

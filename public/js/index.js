@@ -1,22 +1,3 @@
-
-
-
-$("#submit").on("click", function () {
-  var beerSearch = $("#example-text").val().trim();
-  window.location.href = "/glass/" + beerSearch;
-});
-
-/***************************************
-Random button click, doesnt need user input, can attach it to the page load on redirect
-**************************************/
-
-function getRandomBeer() {
-  $.ajax({ url: "https://api.punkapi.com/v2/beers/random", method: "GET" }).then(function (response) {
-    console.log(response);
-  });
-}
-
-
 function exampleReturn() {
   //this is a function so you can choose to collapse it in vsc
   //click the minus sign to the right of the line #

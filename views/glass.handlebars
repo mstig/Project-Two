@@ -116,16 +116,30 @@
         $('.pour').css("background", "linear-gradient(rgb(21, 9, 1, 1), rgb(21, 9, 1, 1), white)");
     };
     };
+    function rotation() {
+      $('.glass').addClass('rotate');
+    }
+
+    function reverseRotation(){
+      $('.glass').addClass('rotateback');
+    }
+    function beerPourTimed() {
+      setTimeout(function () {
+        $('.pour').addClass('pouring');
+      }, 400);
+      beerColor();
+      beerRise();
+    }
     function beerRise() {
+      rotation();
       $('.beer').addClass('fill');
       $('.head').addClass('active');
     }
     function pourBeer() {
-      $('.pour').addClass('pouring');
-      beerColor();
-      beerRise();
+      beerPourTimed();
       setTimeout(function () {
         $('.pour').addClass('end');
+        reverseRotation();
       }, 1500);
     }
     setTimeout(function () {

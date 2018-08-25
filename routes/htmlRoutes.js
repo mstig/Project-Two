@@ -4,17 +4,9 @@ const request = require("request");
 
 module.exports = function (app) {
   // Load index page
-<<<<<<< HEAD
   app.get("/", function(req, res) {
         res.render("index", {
         msg: "Welcome!"
-=======
-  app.get("/", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
->>>>>>> master
       });
     });
 
@@ -35,15 +27,6 @@ module.exports = function (app) {
     var beerSearch = req.params.search;
     var queryURL = "https://api.punkapi.com/v2/beers?beer_name=" + beerSearch;
 
-<<<<<<< HEAD
-app.get("/termsofuse", function(req, res) {
-  res.render("termsofuse");
-});
-
-app.get("/favs", function(req, res) {
-  res.render("favs");
-});
-=======
     if (!beerSearch) {
       queryURL = "https://api.punkapi.com/v2/beers/random";
     }
@@ -57,7 +40,6 @@ app.get("/favs", function(req, res) {
   app.get("/termsofuse", function (req, res) {
     res.render("termsofuse");
   });
->>>>>>> master
   // Load example page and pass in an example by id
   app.get("/example/:id", function (req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function (dbExample) {

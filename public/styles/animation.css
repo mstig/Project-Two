@@ -8,6 +8,7 @@
   background: linear-gradient(white, #b98904,#b98904,#b98904, #b98904,#b98904);
   transition: all 2.5s ease-in-out;
   transform: scaleY(0);
+  padding-top: 14%;
 }
 #containerbeer .beer.fill {
   transform: scaleY(1);

@@ -1,99 +1,191 @@
- <div class="container">
-   <br><br><br>
-    <h2>Brews For Me Survey: Beer Me</h2>
-    <hr>
+<div class="container">
+  <br><br><br>
+  <h2>Brews For Me Survey: Beer Me</h2>
+  <hr>
 
-    <h3><strong>About You</strong></h3>
-    <h4>Name (Required)</h4>
-    <input type="text" id="name" class="form-control" required>
+  <h3><strong>About You</strong></h3>
+  <h4>Name (Required)</h4>
+  <input type="text" id="name" class="form-control" required>
 
-    <h4>Age (You must be 21 years of age to enter.)</h4>
-    <input type="text" id="age" class="form-control" required>
+  <h4>Age (You must be 21 years of age to enter.)</h4>
+  <input type="text" id="age" class="form-control" required>
 
-    <hr>
+  <hr>
 
-    <h3><strong>Question 1</strong></h3>
-    <h4>What is the prefered ABV of the beer you enjoy?</h4>
-    <select class="chosen-select" id="q1">
-      <option value=""></option>
-      <option value="1">1. 4.0 - 5.0 ABV (LIGHT BEER/LAGER)</option>
-      <option value="2">2. 6.0 - 7.0 ABV (IPA/SAISON)</option>
-      <option value="3">3. 7.0 - 8.0 ABV (DOUBLE IPA/BROWN ALE)</option>
-      <option value="4">4. 9.0+ ABV (PORTER/STOUT)</option>
-    </select>
+  <h3><strong>Question 1</strong></h3>
+  <h4>What is the prefered ABV of the beer you enjoy?</h4>
+  <select class="chosen-select" id="q1">
+    <option value=""></option>
+    <option value="4.5">4.0 - 5.0 ABV (LIGHT BEER/LAGER)</option>
+    <option value="6.5">6.0 - 7.0 ABV (IPA/SAISON)</option>
+    <option value="7.5">7.0 - 8.0 ABV (DOUBLE IPA/BROWN ALE)</option>
+    <option value="9.5">9.0+ ABV (PORTER/STOUT)</option>
+  </select>
 
-    <h3><strong>Question 2</strong></h3>
-    <h4>Generally speaking, you enjoy light beers like a Pale Lager, Pilsner or Wheat Ale.</h4>
-    <select class="chosen-select" id="q2">
-      <option value=""></option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
+  <h3><strong>Question 2</strong></h3>
+  <h4>You prefer light beers like a Pale Lager, Pilsner or Wheat Ale.</h4>
+  <select class="chosen-select" id="q2">
+    <option value=""></option>
+    <option value="11">Yes</option>
+    <option value="-1">No Preference</option>
+    <option value="-1">No</option>
+  </select>
 
 
-    <h3><strong>Question 3</strong></h3>
-    <h4>Generally speaking, you enjoy light-to-medium beers like an Indian Pale Ale, American Pale Ale or Saison?</h4>
-    <select class="chosen-select" id="q3">
-      <option value=""></option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
+  <h3><strong>Question 3</strong></h3>
+  <h4>You prefer light-to-medium beers like an Indian Pale Ale, American Pale Ale or Saison?</h4>
+  <select class="chosen-select" id="q3">
+    <option value=""></option>
+    <option value="15">Yes</option>
+    <option value="-1">No Preference</option>
+    <option value="-1">No</option>
+  </select>
 
 
-    <h3><strong>Question 4</strong></h3>
-   <h4>Generally speaking, you enjoy medium beers like an Double IPA, Amber Ale or Brown Ale?</h4>
-    <select class="chosen-select" id="q4">
-      <option value=""></option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
+  <h3><strong>Question 4</strong></h3>
+  <h4>You prefer medium beers like a Double IPA, Amber Ale or Brown Ale?</h4>
+  <select class="chosen-select" id="q4">
+    <option value=""></option>
+    <option value="30">Yes</option>
+    <option value="-1">No Preference</option>
+    <option value="-1">No</option>
+  </select>
 
 
-    <h3><strong>Question 5</strong></h3>
-    <h4>Generally speaking, you'd actyually prefer a darker beer, such as a Stout or Porter?</h4>
-    <select class="chosen-select" id="q5">
-      <option value=""></option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
+  <h3><strong>Question 5</strong></h3>
+  <h4>You prefer darker beers, such as a Stout or Porter?</h4>
+  <select class="chosen-select" id="q5">
+    <option value=""></option>
+    <option value="50">Yes</option>
+    <option value="-1">No Preference</option>
+    <option value="-1">No</option>
+  </select>
 
 
-    <h3><strong>Question 6</strong></h3>
-    <h4>I was looking for a beer brewed in the last three years?</h4>
-    <select class="chosen-select" id="q6">
-      <option value=""></option>
-      <option value="1">1. YES</option>
-      <option value="2">2. I DON'T KNOW</option>
-      <option value="3">3. NO</option>
-    </select>
+  <h3><strong>Question 6</strong></h3>
+  <h4>I want to see newer beers, first brewed within the last five years.</h4>
+  <select class="chosen-select" id="q6">
+    <option value=""></option>
+    <option value="1">Yes</option>
+    <option value="2">No preference</option>
+    <option value="3">No</option>
+  </select>
 
 
-    <h3><strong>Question 7</strong></h3>
-    <h4>How bitter do you like your beer?</h4>
-    <select class="chosen-select" id="q7">
-      <option value=""></option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
+  <h3><strong>Question 7</strong></h3>
+  <h4>How bitter do you like your beer?</h4>
+  <select class="chosen-select" id="q7">
+    <option value=""></option>
+    <option value="15">Not Bitter At All (American Lager, Scottish Ale)</option>
+    <option value="35">Slightly Bitter (Stout, Porter)</option>
+    <option value="70">Bitter (India Pale Ale)</option>
+    <option value="90">Extremely Bitter (Double or Imperial IPA, Barleywine)</option>
+  </select>
 
-    <br>
-    <br>
+  <br>
+  <br>
 
-    <!-- Submit Button -->
-    <button type="submit" class="btn btn-light btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
-     Submit</button>
+  <!-- Submit Button -->
+  <button type="submit" class="btn btn-light btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
+    Submit</button>
+
+  <script type="text/javascript">
+    // Chosen CSS
+    var config = {
+      ".chosen-select": {},
+      ".chosen-select-deselect": {
+        allow_single_deselect: true
+      },
+      ".chosen-select-no-single": {
+        disable_search_threshold: 10
+      },
+      ".chosen-select-no-results": {
+        no_results_text: "Oops, nothing found!"
+      },
+      ".chosen-select-width": {
+        width: "95%"
+      }
+    };
+    for (var selector in config) {
+      $(selector).chosen(config[selector]);
+    }
+    // Capture the form inputs
+    $("#submit").on("click", function (event) {
+      event.preventDefault();
+      // Form validation
+      function validateForm() {
+        var isValid = true;
+        $(".form-control").each(function () {
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+        $(".chosen-select").each(function () {
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+        return isValid;
+      }
+      // If all required fields are filled
+      if (validateForm()) {
+        // Create an object for the user"s data
+        var abv = parseInt($("#q1").val());
+        var ibu = parseInt($("#q7").val());
+        var userData = {
+          name: $("#name").val(),
+          age: $("#age").val(),
+          abvLow: abv - 1,
+          abvHigh: abv + 1,
+          beerAge: $("#q6").val(),
+          ibuLow: ibu - 15,
+          ibuHigh: ibu + 15,
+          colorScores: [
+            $("#q2").val(),
+            $("#q3").val(),
+            $("#q4").val(),
+            $("#q5").val()
+          ]
+        };
+
+
+        var ageRange = "01-1950";
+        var filterScores = userData.colorScores.filter(x => x > 0);
+        filterScores = filterScores.map(Number);
+        var ebcHigh;
+        var ebcLow;
+
+        function checkEbc() { //applies default values to ebc range if user selects no or no preference to all questions
+          if (filterScores.length < 1) {
+            ebcHigh = 50;
+            ebcLow = 10;
+          }
+
+          else { //takes highest & lowest values of user answers & slightly increases range
+            ebcHigh = (Math.max(...filterScores) + 15);
+            ebcLow = (Math.min(...filterScores) - 10);
+          }
+        }
+
+        function newBeers() {
+          if (userData.beerAge < 2) {
+            ageRange = "01-2013";
+          }
+        }
+
+        newBeers();
+        checkEbc();
+        console.log("post function ebc:", ebcHigh, ebcLow);
+
+        var queryURL = `https://api.punkapi.com/v2/beers?abv_gt=${userData.abvLow}&abv_lt=${userData.abvHigh}&ibu_gt=${userData.ibuLow}&ibu_lt=${userData.ibuHigh}&ebc_lt=${ebcHigh}&ebc_gt=${ebcLow}&brewed_after=${ageRange}`;
+
+        $.ajax({ url: queryURL, method: "GET" }).then(function (response) {
+          console.log(response);
+        });
+
+      }
+      else {
+        alert("Please complete all forms before submitting!");
+      }
+    });
+  </script>

@@ -23,6 +23,20 @@ module.exports = function(app) {
   });
 
 
+  app.put("/api/favs/:UserID", function(req, res) {
+   console.log(req.body)
+    db.FavList.update(req.body, 
+      { where: {
+         UserID: req.params.UserID 
+        } 
+      }).then(function(dbfavs) {
+      res.json(dbfavs);
+    });
+  });
+
+
+  
+
 
 
 

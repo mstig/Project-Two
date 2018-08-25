@@ -90,7 +90,7 @@
         }
     }
     function beerColor() {
-    var EBC = 17;
+    var EBC = 5;
       if (EBC <= 11) {
         $('.beer').css("background", "linear-gradient(white, rgb(184, 123, 28, .95),rgb(184, 123, 28, .95),rgb(184, 123, 28, .95), rgb(184, 123, 28, .95),rgb(184, 123, 28, .95))");
         $('.pour').css("background", "linear-gradient(rgb(184, 123, 28), rgb(184, 123, 28),white)");
@@ -112,15 +112,29 @@
         $('.pour').css("background", "linear-gradient(rgb(21, 9, 1, 1), rgb(21, 9, 1, 1), white)");
     };
     };
+    function rotation() {
+      $('.glass').addClass('rotate');
+    }
+
+    function reverseRotation(){
+      $('.glass').addClass('rotateback');
+    }
+    function beerPourTimed() {
+      setTimeout(function () {
+        $('.pour').addClass('pouring');
+      }, 400);
+      beerColor();
+      beerRise();
+    }
     function beerRise() {
+      rotation();
       $('.beer').addClass('fill');
     }
     function pourBeer() {
-      $('.pour').addClass('pouring');
-      beerColor();
-      beerRise();
+      beerPourTimed();
       setTimeout(function () {
         $('.pour').addClass('end');
+        reverseRotation();
       }, 1500);
     }
     setTimeout(function () {

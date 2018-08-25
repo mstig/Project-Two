@@ -8,7 +8,11 @@ body {
   background-size: cover;
   background-color: black;
 }
- 
+
+#mainbody{
+  max-height:1080px;
+}
+
 h1, h2, h3, h4, h5, h6, p {
   color: white;
   font-family: 'Shadows Into Light', cursive;

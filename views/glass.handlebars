@@ -19,29 +19,32 @@
   p {
     color: black;
   }
+
   .bubble {
     position: absolute;
     box-shadow: 0px 5px 13px 0px rgba(170, 119, 56, 0.6) inset;
     border-radius: 50%;
-    background: -webkit-radial-gradient(center ellipse, rgba(255,255,255,0.3) 0%,rgba(255,255,255,0) 64%);
-    background: -o-radial-gradient(center ellipse, rgba(255,255,255,0.3) 0%,rgba(255,255,255,0) 64%);
-    background: radial-gradient(ellipse at center, rgba(255,255,255,0.3) 0%,rgba(255,255,255,0) 64%);
+    background: -webkit-radial-gradient(center ellipse, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 64%);
+    background: -o-radial-gradient(center ellipse, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 64%);
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 64%);
     border-radius: 50%;
-  z-index: 2;
-  width: 50px;
-  height: 50px;
-}
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+  }
 </style>
-<body class="pour-background">
+
 
 <div class='container-fluid' id='mainbody'>
   <div class='row animationwrapper'>
     <div class='col-md-3 col-sm-12'>
       <div class="card" id='idcard'>
         <div class="card-body">
-          <h5 class="card-title" id='beername'>Yeungling Lager</h5>
-          <h6 class="card-subtitle mb-2 text-muted" id='beersubtitle'>Penn's Choice</h6>
-          <p class="card-text" id='beertext'>Brewed in Pennsylvania and tastes like mistakes.</p>
+          <h5 class="card-title" id='beername'>{{beer.name}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted" id='beersubtitle'>{{beer.tagline}}</h6>
+          <p class="card-text" id='beerabv'>{{beer.abv}} percent ABV.</p>
+          <p class="card-text" id='beeribu'>{{beer.ibu}} IBUs</p>
+          <p class="card-text" id="beerebc" value="{{beer.ebc}}">{{beer.ebc}} EBC</p>
           <a href="/" class="card-link">Go Back</a>
         </div>
       </div>
@@ -49,7 +52,7 @@
     <div class='col-md-6 col-sm-12' id="containerbeer">
       <div class="tap"></div>
       <div class="glass">
-        <div class="beer"id='beerbody'></div>
+        <div class="beer" id='beerbody'></div>
       </div>
       <div class="pour"></div>
     </div>
@@ -57,18 +60,16 @@
       <div class="card" id='datacard'>
         <div class="card-body">
           <h5 class="card-title">Information:</h5>
-          <p class="card-text" id='beerabv'>4.4 percent ABV.</p>
-          <p class="card-text" id='beerorigin'>Brewed in Pennsylvania</p>
-          <p class="card-text" id='beeravailability'>Available Worldwide</p>
-          <p class="card-text" id='beerscore'>Recommended.</p>
+          <p class="card-text" id='beertext'>{{beer.description}}</p>
+          <p class="card-text" id='beerorigin'>First Brewed {{beer.first_brewed}}</p>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-</body>
 <script>
+
   $(function () {
     function bubbles() {
       var mainTl = new TimelineMax({ paused:false});
@@ -98,7 +99,7 @@
         }
     }
     function beerColor() {
-    var EBC = 17;
+    var EBC = $("#beerebc").attr("value");
       if (EBC <= 11) {
         $('.beer').css("background", "linear-gradient(white, rgb(184, 123, 28, .95),rgb(184, 123, 28, .95),rgb(184, 123, 28, .95), rgb(184, 123, 28, .95),rgb(184, 123, 28, .95))");
         $('.pour').css("background", "linear-gradient(rgb(184, 123, 28), rgb(184, 123, 28),white)");
@@ -120,15 +121,30 @@
         $('.pour').css("background", "linear-gradient(rgb(21, 9, 1, 1), rgb(21, 9, 1, 1), white)");
     };
     };
-    function beerRise() {
-      $('.beer').addClass('fill');
+    function rotation() {
+      $('.glass').addClass('rotate');
     }
-    function pourBeer() {
-      $('.pour').addClass('pouring');
+
+    function reverseRotation(){
+      $('.glass').addClass('rotateback');
+    }
+    function beerPourTimed() {
+      setTimeout(function () {
+        $('.pour').addClass('pouring');
+      }, 400);
       beerColor();
       beerRise();
+    }
+    function beerRise() {
+      rotation();
+      $('.beer').addClass('fill');
+      $('.head').addClass('active');
+    }
+    function pourBeer() {
+      beerPourTimed();
       setTimeout(function () {
         $('.pour').addClass('end');
+        reverseRotation();
       }, 1500);
     }
     setTimeout(function () {

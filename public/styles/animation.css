@@ -1,43 +1,46 @@
-#containerbeer {
-  width: 200px;
-  height: 400px;
-  margin: 0 auto;
-  position: relative;
-  margin-top: 28%;
-}
 
 #containerbeer .beer {
   width: 100%;
   height: 100%;
   position: absolute;
-  background: #fac92c;
-  bottom: 0;
-  height: 0;
-  transition: 1500ms ease-in;
+  bottom: -50%;
+  background: #fed849;
+  background: linear-gradient(white, #b98904,#b98904,#b98904, #b98904,#b98904);
+  transition: all 2.5s ease-in-out;
+  transform: scaleY(0);
 }
-
 #containerbeer .beer.fill {
-  height: 100%;
+  transform: scaleY(1);
+  bottom: 0%;
 }
-
-#containerbeer .beer:after {
-  content: '';
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  background: #ea9602;
-  right: 0;
-}
-
 #containerbeer .glass {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  position: relative;
+  display: block;
+  width: 300px;
+  height: 500px;
   border: solid 10px #e8e4d9;
   border-top: solid 5px #e8e4d9;
   border-bottom: solid 30px #e8e4d9;
   border-radius: 5px;
   transform: perspective(500px) rotateX(-30deg);
+  margin:auto;
+}
+
+#containerbeer .tap {
+  position: relative;
+  display: block;
+  width: 150px;
+  height: 140px;
+  background: black;
+  border: solid 10px #e8e4d9;
+  border-top: solid 5px #e8e4d9;
+  border-bottom: solid 10px #e8e4d9;
+  border-radius: 5px;
+  transform: perspective(400px) rotateX(-30deg);
+  margin:auto;
+  top: -75%;
+  right: 2.25%;
+  z-index: 1;
 }
 
 #containerbeer .glass:before,
@@ -48,92 +51,61 @@
   background: #fff;
   width: 10px;
 }
-
 #containerbeer .glass:before {
   height: 20%;
   left: 10px;
   top: 5%;
   z-index: 1;
 }
-
 #containerbeer .glass:after {
   height: 70%;
   right: 10px;
   top: 5%;
 }
-
-#containerbeer .head {
-  position: absolute;
-  width: 60%;
-  height: 60px;
-  background: #fff;
-  bottom: 10%;
-  left: 5px;
-  border-radius: 50%;
-  z-index: 0;
-  transition: 1600ms ease-in;
-}
-
-#containerbeer .head.active {
-  bottom: 82%;
-}
-
-#containerbeer .head:before,
-#containerbeer .head:after {
+#containerbeer .tap:before,
+#containerbeer .tap:after {
   content: '';
   position: absolute;
+  border-radius: 10px;
   background: #fff;
-  border-radius: 50%;
+  width: 10px;
+}
+#containerbeer .tap:before {
+  height: 20%;
+  left: 10px;
+  top: 5%;
+  z-index: 1;
+}
+#containerbeer .tap:after {
+  height: 70%;
+  right: 10px;
+  top: 5%;
 }
 
-#containerbeer .head:before {
-  width: 30px;
-  height: 30px;
-  left: 50px;
-  top: 15px;
-}
-
-#containerbeer .head:after {
-  width: 40px;
-  height: 40px;
-  left: 67px;
-  top: 9px;
-}
 
 #containerbeer .pour {
-  position: absolute;
   width: 40px;
-  height: 250%;
-  background: #fac92c;
+  height: 305%;
   border-radius: 20px;
-  left: 25px;
-  z-index: -1;
-  bottom: 300%;
+  right: 50%;
   transition: 300ms ease-in;
+  background: linear-gradient( #b98904,#b98904, white);
+  z-index: -1;
 }
 
 #containerbeer .pour.pouring {
-  bottom: 23%;
+  bottom: 16%;
+  position: absolute;
 }
-
 #containerbeer .pour.end {
   height: 0;
 }
-
-#idcard {
-  width: 200px;
-  height: 300px;
-  position: absolute;
-  left: 600px;
-  top: 500px;
-  background: white;
+.animationwrapper {
+  padding-top: 25%;
 }
-
-#datacard {
-  width: 200px;
+.animationwrapper .card {
   height: 300px;
-  position: absolute;
-  left: 237%;
-  top: -430px;
+  text-align: center;
   background: white;
+  z-index: 2;
 }

@@ -28,7 +28,7 @@
 }
 </style>
 
-<div class='container-fluid'>
+<div class='container-fluid' id='mainbody'>
   <div class='row animationwrapper'>
     <div class='col-md-3 col-sm-12'>
       <div class="card" id='idcard'>
@@ -65,21 +65,22 @@
     function bubbles() {
       var mainTl = new TimelineMax({ paused:false});
 
-        var parentHeight = $('.beer').height();
+        var parentHeight = $('.beer').height()
         var parentWidth = $('.beer').width();
 
-        $('.beer').append(new Array(50).join('<div class="bubble" />'));
+        $('.beer').append(new Array(150).join('<div class="bubble" />'));
 
         $(".bubble").each(function (i, bubble) {
             animateBubble(bubble);
         });
+
         function animateBubble(bubble) {
             var bubble = $(bubble);
             var bubbleHeight = bubble.height();
             var tl = new TimelineMax();
             tl
-                .set(bubble, { y: function (index) { return (index + parentHeight * 1) }, scale: random(0.1, 0.3), x: random(1, 250), rotation: random(0, 360) })
-                .to(bubble, 1, { x: "+=10", yoyo: true, repeat: 2, ease: Sine.easeInOut }, random(0, 30))
+                .set(bubble, { y: function (index) { return (index + parentHeight * 1)}, scale: random(0.1, 0.2), x: random(1, 250), rotation: random(0, 360) })
+                .to(bubble, 1, { x: "+=10", yoyo: true, repeat: 10, ease: Sine.easeInOut }, random(0, 30))
                 .to(bubble, random(2, 30), { rotation: '+=360', y: String(-bubbleHeight), onComplete: animateBubble, onCompleteParams: [bubble] }, 0);
             return tl;
         }
@@ -89,7 +90,7 @@
         }
     }
     function beerColor() {
-    var EBC = 24;
+    var EBC = 5;
       if (EBC <= 11) {
         $('.beer').css("background", "linear-gradient(white, #b87b1c,#b87b1c,#b87b1c, #b87b1c,#b87b1c)");
         $('.pour').css("background", "linear-gradient(#b87b1c, #b87b1c,white)");

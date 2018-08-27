@@ -43,8 +43,15 @@ h2 {
   background-color: rgb(0, 0, 0, 0.00);
 
 }
-
-
+.table{
+  margin: auto;
+}
+#favorites-list{
+  background: url('/assets/images/chalkboard.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 5px black solid;
+}
 .logo{
   border-radius: 75%;
   height: 300px;

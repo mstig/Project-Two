@@ -1,0 +1,89 @@
+@import "compass/css3";
+
+p.favoritesanimation {
+  overflow: hidden;
+  width: 585px;
+  margin: auto;
+}
+p.favoritesanimation span {
+  float:left;
+  display:block;
+  
+  font-family: Kavoon, "Helvetica Neue", sans-serif;
+  font-size: 100px;
+  font-weight:bold;
+  letter-spacing: 0.05em;
+  text-transform:uppercase;
+  
+  background-image: url('https://static.decalgirl.com/assets/designs/large/ale.jpg');
+  background-position: 50% 125px;
+  background-size: 250px;
+  background-repeat: no-repeat;
+  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255,255,255,0.1);
+}
+p.favoritesanimation.reset span {
+  -webkit-animation-name: empty-beer;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+}
+p.favoritesanimation.loading span {
+  -webkit-animation-name: fill-beer;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+p.favoritesanimation.loading span:nth-child(1) {
+  -webkit-animation-delay: 0s;
+}
+p.favoritesanimation.loading span:nth-child(2) {
+  -webkit-animation-delay: 0s;
+}
+p.favoritesanimation.loading span:nth-child(3) {
+  -webkit-animation-delay: 0s;
+}
+p.favoritesanimation.loading span:nth-child(4) {
+  -webkit-animation-delay: 0s;
+}
+p.favoritesanimation.loading span:nth-child(5) {
+  -webkit-animation-delay: 0s;
+}
+p.favoritesanimation.loading span:nth-child(6) {
+  -webkit-animation-delay: 0s;
+}
+p.favoritesanimation.loading span:nth-child(7) {
+  -webkit-animation-delay: 0s;
+}
+p.favoritesanimation.loading span:nth-child(8) {
+  -webkit-animation-delay: 0s;
+}
+p.favoritesanimation.loading span:nth-child(9) {
+  -webkit-animation-delay: 0s;
+}
+p.favoritesanimation.loading span:nth-child(10) {
+  -webkit-animation-delay: 0s;
+}
+
+@-webkit-keyframes fill-beer {
+  0% {
+    background-size: 75px;
+    background-position: 50% 105px;
+  }
+  100% {
+    background-size: 75px;
+    background-position: 50% 15px;
+  }
+}
+@-webkit-keyframes empty-beer {
+  0% {
+    background-size: 75px;
+    background-position: 50% -20px;
+  }
+  100% {
+    background-size: 75px;
+    background-position: 50% 105px;
+  }
+}

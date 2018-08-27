@@ -68,12 +68,14 @@
     function testAPI() {
       console.log('Welcome!  Fetching your information.... ');
       FB.api('/me', function (response) {
+        console.log("facebook api login");
         console.log('Successful login for: ' + response.name);
-        console.log("login respones obj: " + response);
-        document.getElementById('status').innerHTML =
-          'Thanks for logging in, ' + response.name + '!';
-      });
-    }
+        console.log("login response obj: " + response);
+        /*    document.getElementById('status').innerHTML =
+              'Thanks for logging in, ' + response.name + '!';
+          });
+          */
+      }
   </script>
 
   <!--

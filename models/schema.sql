@@ -1,12 +1,12 @@
-DROP DATABASE IF EXISTS FavBrewDB;
-CREATE DATABASE FavBrewDB;
+-- DROP DATABASE IF EXISTS FavBrewDB;
+-- CREATE DATABASE FavBrewDB;
 
-Use FavBrewDB;
-Select * from FavLists;
+-- Use FavBrewDB;
+-- Select * from FavLists;
 
 
 
-Use FavBrewDB;
+Use n5676ad219a87k3r;
 INSERT INTO FavLists ( UserID, favorites, createdAt, updatedAt)
 Values ('101', '1, 2, 3, 4', NOW(), NOW()),
 ('102', '6, 22, 7, 9', NOW(), NOW()),

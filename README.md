@@ -1,15 +1,8 @@
-# Project-Two
+# Brews For Me
+# Project Two
 
-https://punkapi.com/
+Deployed on Heroku at: https://intense-scrubland-92623.herokuapp.com/
+Created with Node, Express, MySQL and Sequelize.
 
-1st- search by beer name- basic API
-
-2nd- survey based off params- return best match
-
-3rd- filter by vegan, gluten-free, alcohol-free blah blah blah
-
-4th- incorporate db or authentication to save favorites, facebook authentication
-
-5th- make post to facebook
-
-6th- connect to local breweries
+Using BrewDog's Punk API, search for beers by name, view random beers, or take a short survey to find what beers you will like!
+Log in with facebook to save drinks to your personal favorites list!

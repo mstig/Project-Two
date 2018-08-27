@@ -26,24 +26,12 @@
             <a id='random' class='btn btn-light' href='glass'>Roll the Dice</a>
             <a id="submit" class="btn btn-light">Search</a>
           </form>
+          <p>Log in with Facebook to save your personal favorites!</p>
           <fb:login-button scope="public_profile,email" class="fb-login-button" onlogin="checkLoginState();" data-width="100px" data-max-rows="1"
             data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true">
           </fb:login-button>
 
-          <div id="status"></div>
-
-          <div id='matches'>
-
-
-            <h3>Matches:</h3>
-            <ul id="example-list" class="list-group">
-              {{#each examples}}
-              <li data-id="{{this.id}}" class="list-group-item">
-                <a href="example/{{this.id}}">{{this.text}}</a>
-                <button class="btn btn-danger delete">ｘ</button>
-              </li>
-              {{/each}}
-            </ul>
+          <div id="status"></div>        
           </div>
         </div>
       </div>

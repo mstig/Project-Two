@@ -31,7 +31,19 @@
             data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true">
           </fb:login-button>
 
-          <div id="status"></div>        
+          <div id="status"></div>
+
+          <div id='matches'>
+
+
+            <ul id="example-list" class="list-group">
+              {{#each examples}}
+              <li data-id="{{this.id}}" class="list-group-item">
+                <a href="example/{{this.id}}">{{this.text}}</a>
+                <button class="btn btn-danger delete">ｘ</button>
+              </li>
+              {{/each}}
+            </ul>
           </div>
         </div>
       </div>

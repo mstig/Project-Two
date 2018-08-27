@@ -1,24 +1,47 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  // Get all favorites for testing purposes
+  app.get("/api/favs", function(req, res) {
+    db.FavList.findAll({}).then(function(dbfavs) {
+      res.json(dbfavs);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  // Create a new entry in favorite table, Used to populate with fo data for testing
+  app.post("/api/favs", function(req, res) {
+    db.FavList.create(req.body).then(function(dbfavs) {
+      res.json(dbfavs);
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+  // get a favorites list by userid
+  app.get("/api/favs/:UserID", function(req, res) {
+    db.FavList.findOne({ where: { UserID: req.params.UserID } }).then(function(dbfavs) {
+      res.json(dbfavs);
     });
   });
+
+
+  app.put("/api/favs/:UserID", function(req, res) {
+   console.log(req.body)
+    db.FavList.update(req.body, 
+      { where: {
+         UserID: req.params.UserID 
+        } 
+      }).then(function(dbfavs) {
+      res.json(dbfavs);
+    });
+  });
+
+
+  
+
+
+
+
+
+
+
+
 };

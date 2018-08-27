@@ -4,14 +4,12 @@ const request = require("request");
 
 module.exports = function (app) {
   // Load index page
-  app.get("/", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
+  app.get("/", function(req, res) {
+        res.render("index", {
+        msg: "Welcome!"
       });
     });
-  });
+
 
   app.get("/survey", function (req, res) {
     res.render("survey");
@@ -38,7 +36,9 @@ module.exports = function (app) {
       res.render("glass", { beer: beerInfo[0] });
     });
   });
-
+  app.get("/favs", function (req, res) {
+    res.render("favs");
+  });
   app.get("/termsofuse", function (req, res) {
     res.render("termsofuse");
   });

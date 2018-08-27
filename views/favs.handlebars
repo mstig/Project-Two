@@ -1,13 +1,28 @@
-
+<br><br><br><br>
 <div class="container">
   <div class="row">
     <div class="col-8 offset-2">
-      <div class="card mt-4">
-        <div class="card-body">
+      <div class="card mt-4" id='favorites-list'>
+        <div class="card-title">
+          <center>
+  <p class="favoritesanimation">
+  <span class='fani'>F</span>
+  <span class='fani'>A</span>
+  <span class='fani'>V</span>
+  <span class='fani'>O</span>
+  <span class='fani'>R</span>
+  <span class='fani'>I</span>
+  <span class='fani'>T</span>
+  <span class='fani'>E</span>
+  <span class='fani'>S</span>
+</p>
+</center>
+        </div>
 <table class="table table-hover" >
   <thead>
     <tr>
-      <th>My Favorites</th>
+      <th>
+</th>
     </tr>
     <tr>
       <th></th>
@@ -25,4 +40,21 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(function(){
+  var $favoritesanimation = $('.favoritesanimation');
+  
+  $favoritesanimation.addClass('loading');
+  
+  window.setInterval(function(){
+    $favoritesanimation.addClass('reset');
+    $favoritesanimation.removeClass('loading');
+    window.setTimeout(function(){
+      $favoritesanimation.removeClass('reset');
+      $favoritesanimation.addClass('loading');
+    }, 3000);
+  }, 17500);
+});
+</script>
 

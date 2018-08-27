@@ -46,6 +46,10 @@ h2 {
 .table{
   margin: auto;
 }
+
+td, th {
+  color: white;
+}
 #favorites-list{
   background: url('/assets/images/chalkboard.jpg');
   background-repeat: no-repeat;

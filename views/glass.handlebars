@@ -27,6 +27,8 @@
     width: 50px;
     height: 50px;
   }
+
+  
 </style>
 
 <div class='container-fluid' id='mainbody'>
@@ -39,7 +41,7 @@
           <p class="card-text" id='beerabv'>{{beer.abv}} percent ABV.</p>
           <p class="card-text" id='beeribu'>{{beer.ibu}} IBUs</p>
           <p class="card-text" id="beerebc" value="{{beer.ebc}}">{{beer.ebc}} EBC</p>
-          <a href="/" class="card-link">Go Back</a>
+          <a href="#" id="addLink" data="{{beer.id}}"class="card-link">Add to Favorites</a>
         </div>
       </div>
     </div>
@@ -61,7 +63,6 @@
     </div>
   </div>
 </div>
-
 
 <script>
 

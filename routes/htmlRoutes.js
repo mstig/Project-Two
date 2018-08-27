@@ -36,7 +36,9 @@ module.exports = function (app) {
       res.render("glass", { beer: beerInfo[0] });
     });
   });
-
+  app.get("/favs", function (req, res) {
+    res.render("favs");
+  });
   app.get("/termsofuse", function (req, res) {
     res.render("termsofuse");
   });

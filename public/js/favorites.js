@@ -41,7 +41,7 @@ $(document).ready(function() {
           let x = res[i];
           var row = $('<tr>');
           var nameData = $('<td>').text(x.name).attr('scope', 'col').addClass('clickTd').attr("name", x.name);
-          var typeData = $('<td>').text(x.ibu).attr('scope', 'col');
+          var typeData = $('<td>').text(x.tagline).attr('scope', 'col');
           var buttonTD = $('<td>')
           var info = $('<td>')
           var removeBtn = $('<button>').addClass("btn btn-danger rmvBtn").text("Remove").attr("id", x.id)
@@ -70,6 +70,23 @@ $(document).ready(function() {
         console.log(currentFavs)
         updateDb(currentFavs);   
    }
+
+   // adds a new favorite
+   const addFav = function (x){
+    console.log("passing id to add function"+x);
+    console.log(currentFavs);
+    x = parseInt(x);
+    var index = currentFavs.indexOf(x);
+    console.log(index+"is index")  
+    if (index == -1) {
+      currentFavs.push(x);
+      console.log(currentFavs)
+      updateDb(currentFavs); 
+    }
+    else if (index >= 0) {
+      alert("This beer is already on your Favorites list")
+    };
+ }
   //Update the db with the current Favs
     const  updateDb= function (x) {
         console.log(x);
@@ -86,19 +103,25 @@ $(document).ready(function() {
   }
 
     //on click for buttons
+    // this button removes the beer from the users favorites
    $('#favTable').on('click', '.rmvBtn', function(event){
     event.preventDefault();
     var removeId = this.id; 
     console.log(this.id);
     removeFav(removeId)
     });
-       
+  // This function returns the user to the info page about the beer 
     $('#favTable').on('click', ".infoBtn",function(event) {
         event.preventDefault();
         console.log(this.name);
         window.location.href = "/glass/"+this.name;
        });
-
+  // this button on the glass page adds the beer to the users favorites
+      $('#addLink').click( function (event){
+        event.preventDefault();
+        newFav=$(this).attr("data");
+        addFav(newFav);
+      })
   // call get favs on page load to start our chain 
     getFavs();
 

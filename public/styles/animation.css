@@ -107,10 +107,10 @@
 
 #containerbeer .pour {
   width: 40px;
-  height: 300%;
+  height: 400%;
   border-radius: 20px;
   left: 50%;
-  transition: 300ms ease-in-out;
+  transition: 300ms ease-in;
   background: linear-gradient( #b98904,#b98904, white);
   z-index: -1;
 }

@@ -1,22 +1,44 @@
+<style>
+  @media only screen and (min-width: 300px) {
+  p.favoritesanimation span {
+    font-size: 100px;
+    margin: auto;
+  }
+}
+  @media only screen and (max-width: 720px) {
+  p.favoritesanimation span {
+    font-size: 100px;
+  }
+}
+#favscont{
+  
+}
+#titleanimation{
+  margin-left: 0%;
+
+}
+</style>        
+<center>
 <br><br><br><br>
-<div class="container">
+<div class="container" id='favscont'>
   <div class="row">
+    
     <div class="col-8 offset-2">
+      
       <div class="card mt-4" id='favorites-list'>
-        <div class="card-title">
-          <center>
-  <p class="favoritesanimation">
-  <span class='fani'>F</span>
-  <span class='fani'>A</span>
-  <span class='fani'>V</span>
-  <span class='fani'>O</span>
-  <span class='fani'>R</span>
-  <span class='fani'>I</span>
-  <span class='fani'>T</span>
-  <span class='fani'>E</span>
-  <span class='fani'>S</span>
-</p>
-</center>
+        
+        <div class="card-title" id='titleanimation'>
+            <p class="favoritesanimation">
+            <span class='fani'>F</span>
+            <span class='fani'>A</span>
+            <span class='fani'>V</span>
+            <span class='fani'>O</span>
+            <span class='fani'>R</span>
+            <span class='fani'>I</span>
+            <span class='fani'>T</span>
+            <span class='fani'>E</span>
+            <span class='fani'>S</span>
+            </p>
         </div>
 <table class="table table-hover" >
   <thead>
@@ -40,6 +62,7 @@
     </div>
   </div>
 </div>
+</center>
 <br><br>
 <script>
   $(function(){

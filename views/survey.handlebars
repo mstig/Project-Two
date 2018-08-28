@@ -39,13 +39,14 @@
     padding: 20px;
   }
 
-  #card {
+  .card {
     display: inline-block;
     border: 2px, solid, black;
     width: 300px;
-    max-height: 500px;
+    height: 500px;
+    overflow: auto;
     margin-right: auto;
-    margin-left: auto;
+    margin-left: 50%;
     margin-top: auto;
     margin-left: auto;
     padding: 2px;
@@ -146,9 +147,9 @@
 
 <!-- Submit Button -->
 
-<div class='container-fluid' id='mainbody'>
-  <div class='row'>
-    <div class='col-md-3 col-sm-12' id='results-view'></div>
+<div class='container-fluid text-center' id='mainbody'>
+  <div class='row text-center'>
+    <div class='col-md-3 col-sm-12 text-center' id='results-view'></div>
   </div>
 </div>
 
@@ -190,6 +191,11 @@
         }
       });
       return isValid;
+    }
+
+    if ($("#age").val() < 21) {
+      alert("You must be 21 or older to use this webpage!");
+      return;
     }
     // If all required fields are filled
     if (validateForm()) {
@@ -242,7 +248,7 @@
         $('.container').hide(1000);
         $('#submit').hide(1000);
 
-        var displayLength = 4;
+        var displayLength = 5;
         if (response.length < displayLength) {
           displayLength = response.length;
         }

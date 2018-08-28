@@ -30,27 +30,26 @@
   p {
     color: black;
   }
-
+ 
   #results-view {
-    display: grid;
-    grid-template-columns: 300px 300px 300px 300px 300px;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    padding: 20px;
-  }
+   display: grid;
+   grid-template-columns: 310px 310px 310px 310px 310px;
+   grid-column-gap: 20px;
+   grid-row-gap: 20px;
+   padding: 20px;
+ }
 
-  .card {
-    display: inline-block;
-    border: 2px, solid, black;
-    width: 300px;
-    height: 500px;
-    overflow: auto;
-    margin-right: auto;
-    margin-left: 50%;
-    margin-top: auto;
-    margin-left: auto;
-    padding: 2px;
-  }
+ #card {
+   display: inline-block;
+   border: 2px, solid, black;
+   width: 300px;
+   max-height: 500px;
+   margin-right: auto;
+   margin-left: auto;
+   margin-top: auto;
+   margin-left: auto;
+   padding: 10px;
+ }
 </style>
 
 
@@ -254,14 +253,14 @@
         }
         for (var i = 0; i < displayLength; i++) {
           console.log(response[i].name);
-          var resultsDiv = $('<div>').addClass('card');
+          var resultsDiv = $('<div>').addClass('card mx-auto');
           var resultsName = $('<h5>').addClass('card-title').text(response[i].name);
           var resultsTag = $('<h6>').addClass('card-subtitle mb-2 text-muted').text(response[i].tagline);
-          var resultsABV = $('<p>').addClass('card-text').text(response[i].abv + 'percent ABV');
-          var resultsIBU = $('<p>').addClass('card-text').text(response[i].ibu + "IBUs");
-          var resultsEBC = $('<p>').addClass('card-text').text(response[i].ebc + 'EBC');
+          var resultsABV = $('<p>').addClass('card-text').text(response[i].abv + ' percent ABV');
+          var resultsIBU = $('<p>').addClass('card-text').text(response[i].ibu + " IBUs");
+          var resultsEBC = $('<p>').addClass('card-text').text(response[i].ebc + ' EBC');
           var resultsDescription = $('<p>').addClass('card-text').text(response[i].description);
-          var resultsDate = $('<p>').addClass('card-text').text('First Brewed' + response[i].first_brewed);
+          var resultsDate = $('<p>').addClass('card-text').text('First Brewed ' + response[i].first_brewed);
           resultsDiv.append(resultsName);
           resultsDiv.append(resultsTag);
           resultsDiv.append(resultsABV);

@@ -4,11 +4,11 @@ const request = require("request");
 
 module.exports = function (app) {
   // Load index page
-  app.get("/", function(req, res) {
-        res.render("index", {
-        msg: "Welcome!"
-      });
+  app.get("/", function (req, res) {
+    res.render("index", {
+      msg: "Welcome!"
     });
+  });
 
 
   app.get("/survey", function (req, res) {
@@ -32,8 +32,13 @@ module.exports = function (app) {
     }
 
     request(queryURL, function (err, response, body) {
-      var beerInfo = JSON.parse(response.body);
-      res.render("glass", { beer: beerInfo[0] });
+      var beerInfo = JSON.parse(response.body);     
+      if (beerInfo.length < 1) {
+        res.redirect("/glass");
+      }
+      else {
+        res.render("glass", { beer: beerInfo[0] });
+      }
     });
   });
   app.get("/favs", function (req, res) {

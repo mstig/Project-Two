@@ -127,6 +127,10 @@
         });
         return isValid;
       }
+      if ($("#age").val() < 21) {
+        alert("You must be 21 or over to use this page!");
+        return;
+      }
       // If all required fields are filled
       if (validateForm()) {
         // Create an object for the user"s data

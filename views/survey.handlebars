@@ -177,7 +177,7 @@
         checkEbc();
         console.log("post function ebc:", ebcHigh, ebcLow);
 
-        var queryURL = `https://api.punkapi.com/v2/beers?abv_gt=${userData.abvLow}&abv_lt=${userData.abvHigh}&ibu_gt=${userData.ibuLow}&ibu_lt=${userData.ibuHigh}&ebc_lt=${ebcHigh}&ebc_gt=${ebcLow}&brewed_after=${ageRange}`;
+        var queryURL = `https://api.punkapi.com/v2/beers?abv_gt=${userData.abvLow}&abv_lt=${userData.abvHigh}&ibu_gt=${userData.ibuLow}&ibu_lt=${userData.ibuHigh}&ebc_lt=${ebcHigh}&ebc_gt=${ebcLow}&brewed_after=${ageRange}&per_page=5`;
 
         $.ajax({ url: queryURL, method: "GET" }).then(function (response) {
           console.log(response);

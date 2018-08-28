@@ -1,3 +1,58 @@
+<style>
+  h2 {
+    color: white;
+  }
+
+  h3 {
+    color: white;
+  }
+
+  h4 {
+    color: white;
+  }
+
+  select {
+    color: white;
+  }
+
+  option {
+    white: white;
+  }
+
+  h5 {
+    color: black;
+  }
+
+  h6 {
+    color: black;
+  }
+
+  p {
+    color: black;
+  }
+
+  #results-view {
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px 300px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    padding: 20px;
+  }
+
+  #card {
+    display: inline-block;
+    border: 2px, solid, black;
+    width: 300px;
+    max-height: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: auto;
+    margin-left: auto;
+    padding: 2px;
+  }
+</style>
+
+
 <div class="container" style="background-color: rgba(50, 50, 50, 0.6);">
   <br><br><br>
   <h2>Brews For Me Survey: Beer Me</h2>
@@ -85,111 +140,135 @@
   <br>
   <br>
 
-  <!-- Submit Button -->
-  <button type="submit" class="btn btn-light btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
-    Submit</button>
+  <button type="submit" class="btn btn-light btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>Submit</button>
 
-  <script type="text/javascript">
-    // Chosen CSS
-    var config = {
-      ".chosen-select": {},
-      ".chosen-select-deselect": {
-        allow_single_deselect: true
-      },
-      ".chosen-select-no-single": {
-        disable_search_threshold: 10
-      },
-      ".chosen-select-no-results": {
-        no_results_text: "Oops, nothing found!"
-      },
-      ".chosen-select-width": {
-        width: "95%"
-      }
-    };
-    for (var selector in config) {
-      $(selector).chosen(config[selector]);
+</div>
+
+<!-- Submit Button -->
+
+<div class='container-fluid' id='mainbody'>
+  <div class='row'>
+    <div class='col-md-3 col-sm-12' id='results-view'></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  // Chosen CSS
+  var config = {
+    ".chosen-select": {},
+    ".chosen-select-deselect": {
+      allow_single_deselect: true
+    },
+    ".chosen-select-no-single": {
+      disable_search_threshold: 10
+    },
+    ".chosen-select-no-results": {
+      no_results_text: "Oops, nothing found!"
+    },
+    ".chosen-select-width": {
+      width: "95%"
     }
-    // Capture the form inputs
-    $("#submit").on("click", function (event) {
-      event.preventDefault();
-      // Form validation
-      function validateForm() {
-        var isValid = true;
-        $(".form-control").each(function () {
-          if ($(this).val() === "") {
-            isValid = false;
-          }
-        });
-        $(".chosen-select").each(function () {
-          if ($(this).val() === "") {
-            isValid = false;
-          }
-        });
-        return isValid;
-      }
-      if ($("#age").val() < 21) {
-        alert("You must be 21 or over to use this page!");
-        return;
-      }
-      // If all required fields are filled
-      if (validateForm()) {
-        // Create an object for the user"s data
-        var abv = parseInt($("#q1").val());
-        var ibu = parseInt($("#q7").val());
-        var userData = {
-          name: $("#name").val(),
-          age: $("#age").val(),
-          abvLow: abv - 1,
-          abvHigh: abv + 1,
-          beerAge: $("#q6").val(),
-          ibuLow: ibu - 15,
-          ibuHigh: ibu + 15,
-          colorScores: [
-            $("#q2").val(),
-            $("#q3").val(),
-            $("#q4").val(),
-            $("#q5").val()
-          ]
-        };
+  };
+  for (var selector in config) {
+    $(selector).chosen(config[selector]);
+  }
+  // Capture the form inputs
 
-
-        var ageRange = "01-1950";
-        var filterScores = userData.colorScores.filter(x => x > 0);
-        filterScores = filterScores.map(Number);
-        var ebcHigh;
-        var ebcLow;
-
-        function checkEbc() { //applies default values to ebc range if user selects no or no preference to all questions
-          if (filterScores.length < 1) {
-            ebcHigh = 50;
-            ebcLow = 10;
-          }
-
-          else { //takes highest & lowest values of user answers & slightly increases range
-            ebcHigh = (Math.max(...filterScores) + 15);
-            ebcLow = (Math.min(...filterScores) - 10);
-          }
+  $("#submit").on("click", function (event) {
+    event.preventDefault();
+    // Form validation
+    function validateForm() {
+      var isValid = true;
+      $(".form-control").each(function () {
+        if ($(this).val() === "") {
+          isValid = false;
         }
-
-        function newBeers() {
-          if (userData.beerAge < 2) {
-            ageRange = "01-2013";
-          }
+      });
+      $(".chosen-select").each(function () {
+        if ($(this).val() === "") {
+          isValid = false;
         }
-
-        newBeers();
-        checkEbc();
-        console.log("post function ebc:", ebcHigh, ebcLow);
-
-        var queryURL = `https://api.punkapi.com/v2/beers?abv_gt=${userData.abvLow}&abv_lt=${userData.abvHigh}&ibu_gt=${userData.ibuLow}&ibu_lt=${userData.ibuHigh}&ebc_lt=${ebcHigh}&ebc_gt=${ebcLow}&brewed_after=${ageRange}&per_page=5`;
-
-        $.ajax({ url: queryURL, method: "GET" }).then(function (response) {
-          console.log(response);
-        });
-
+      });
+      return isValid;
+    }
+    // If all required fields are filled
+    if (validateForm()) {
+      // Create an object for the user"s data
+      var abv = parseInt($("#q1").val());
+      var ibu = parseInt($("#q7").val());
+      var userData = {
+        name: $("#name").val(),
+        age: $("#age").val(),
+        abvLow: abv - 1,
+        abvHigh: abv + 1,
+        beerAge: $("#q6").val(),
+        ibuLow: ibu - 15,
+        ibuHigh: ibu + 15,
+        colorScores: [
+          $("#q2").val(),
+          $("#q3").val(),
+          $("#q4").val(),
+          $("#q5").val()
+        ]
+      };
+      var ageRange = "01-1950";
+      var filterScores = userData.colorScores.filter(x => x > 0);
+      filterScores = filterScores.map(Number);
+      var ebcHigh;
+      var ebcLow;
+      function checkEbc() { //applies default values to ebc range if user selects no or no preference to all questions
+        if (filterScores.length < 1) {
+          ebcHigh = 50;
+          ebcLow = 10;
+        }
+        else { //takes highest & lowest values of user answers & slightly increases range
+          ebcHigh = (Math.max(...filterScores) + 15);
+          ebcLow = (Math.min(...filterScores) - 10);
+        }
       }
-      else {
-        alert("Please complete all forms before submitting!");
+      function newBeers() {
+        if (userData.beerAge < 2) {
+          ageRange = "01-2013";
+        }
       }
-    });
-  </script>
+      newBeers();
+      checkEbc();
+      console.log("post function ebc:", ebcHigh, ebcLow);
+
+      var queryURL = `https://api.punkapi.com/v2/beers?abv_gt=${userData.abvLow}&abv_lt=${userData.abvHigh}&ibu_gt=${userData.ibuLow}&ibu_lt=${userData.ibuHigh}&ebc_lt=${ebcHigh}&ebc_gt=${ebcLow}&brewed_after=${ageRange}`;
+      $.ajax({ url: queryURL, method: "GET" }).then(function (response) {
+        console.log(response);
+        $('#results-view').empty();
+        $('.container').hide(1000);
+        $('#submit').hide(1000);
+
+        var displayLength = 4;
+        if (response.length < displayLength) {
+          displayLength = response.length;
+        }
+        for (var i = 0; i < displayLength; i++) {
+          console.log(response[i].name);
+          var resultsDiv = $('<div>').addClass('card');
+          var resultsName = $('<h5>').addClass('card-title').text(response[i].name);
+          var resultsTag = $('<h6>').addClass('card-subtitle mb-2 text-muted').text(response[i].tagline);
+          var resultsABV = $('<p>').addClass('card-text').text(response[i].abv + 'percent ABV');
+          var resultsIBU = $('<p>').addClass('card-text').text(response[i].ibu + "IBUs");
+          var resultsEBC = $('<p>').addClass('card-text').text(response[i].ebc + 'EBC');
+          var resultsDescription = $('<p>').addClass('card-text').text(response[i].description);
+          var resultsDate = $('<p>').addClass('card-text').text('First Brewed' + response[i].first_brewed);
+          resultsDiv.append(resultsName);
+          resultsDiv.append(resultsTag);
+          resultsDiv.append(resultsABV);
+          resultsDiv.append(resultsIBU);
+          resultsDiv.append(resultsEBC);
+          resultsDiv.append(resultsDescription);
+          resultsDiv.append(resultsDate);
+          $('#results-view').append(resultsDiv);
+        }
+      });
+    }
+    else {
+      alert("Please complete all forms before submitting!");
+    }
+  });
+</script>

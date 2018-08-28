@@ -3,7 +3,9 @@
 p.favoritesanimation {
   overflow: hidden;
   width: 585px;
-  margin: auto;
+  margin-right: auto;
+  margin-left:auto;
+
 }
 p.favoritesanimation span {
   float:left;

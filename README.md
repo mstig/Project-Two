@@ -1,7 +1,7 @@
 # Brews For Me
 # Project Two
 
-Deployed on Heroku at: https://intense-scrubland-92623.herokuapp.com/
+Deployed on Heroku at: https://brewsforme.herokuapp.com/
 Created with Node, Express, MySQL and Sequelize.
 
 Using BrewDog's Punk API, search for beers by name, view random beers, or take a short survey to find what beers you will like!
